@@ -17,20 +17,21 @@ namespace CalculoNumerico.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "A página que descreverá sua aplicação.";
 
             return View();
         }
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
+            ViewData["Message"] = "Sua página de contato.";
 
             return View();
         }
 
         public IActionResult Privacy()
         {
+            ViewData["ArquivoTexto"] = "Sobre politicas de privacidade do site.";
             return View();
         }
 

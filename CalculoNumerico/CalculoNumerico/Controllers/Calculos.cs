@@ -9,20 +9,19 @@ namespace CalculoNumerico.Controllers
 {
     public class Calculos : Controller
     {
-       
-        public string Index()
-        {
-            return "This is my default action...";
-        }
 
-        public string Welcome()
-        {
-            return "This is the Welcome action method...";
-        }
+        public IActionResult Index()
+            => View();
 
-        public string Comecando(string nome, int numerosCalculos = 1)
+        public IActionResult EliminacaoGauss()
+            => View();
+
+        public IActionResult Comeco(string name, int numTimes)
         {
-            return HtmlEncoder.Default.Encode($"Ola {nome}, Numero Calculos: {numerosCalculos}");
+            ViewData["Message"] = "Olá " + name;
+            ViewData["numTimes"] = numTimes;
+
+            return View();
         }
     }
 }
