@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CryptCesar.cs" />
+    <Compile Include="Crypt_SHA1.cs" />
     <Compile Include="InteracaoJson.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
