@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
@@ -10,42 +12,28 @@ using Newtonsoft.Json.Linq;
 
 namespace CryptCesar_SHA1
 {
+
     class InteracaoJson
     {
-        private string url;
-        private JObject jObject;
-        public InteracaoJson(string url)
+        public async Task<bool> sentPost(string RespoUrl)
         {
-            this.url = url;
-            getJson();
-        }
+            var answerJson = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + @"\answer.json");
 
-        public string getAtributoJson(String nomeParametro)
-        {
-            return jObject.GetValue(nomeParametro).ToString();
-        }
-        private JObject getJson()
-        {
-            try
-            {
-                HttpWebRequest request = HttpWebRequest.Create(url) as HttpWebRequest;
-                string jsonValue = "";
+            var client = new HttpClient();
+            client.BaseAddress = new Uri(RespoUrl);
+            client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("multipart/form-data"));
 
-                using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
-                {
-                    StreamReader reader = new StreamReader(response.GetResponseStream());
-                    jsonValue = reader.ReadToEnd();
-                }
+           // string json = JsonConvert.SerializeObject(answerJson);
 
-                this.jObject = JObject.Parse(jsonValue);
+            // Envia o json para a API e verifica se obteve sucesso
+            HttpResponseMessage response = await client.PostAsync(RespoUrl, new StringContent(answerJson, Encoding.UTF8, "multipart/form-data"));
 
-                return this.jObject;
-            }
-            catch (JsonException) {
-                Console.Write("Falha ao pegar Json");
-            }
+            response.EnsureSuccessStatusCode();
 
-            return this.jObject;
+            if (response.IsSuccessStatusCode)
+                return true;
+
+            return false;
         }
     }
 }
