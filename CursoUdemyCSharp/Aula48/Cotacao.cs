@@ -7,12 +7,12 @@ using System;
 namespace Aula48 {
     class Cotacao {
 
+        static private JObject jObject = new JObject();
         private string _urlHGFinance = "https://api.hgbrasil.com/finance?format=json&key=e4d3ec9c";
-        private JObject jObject = new JObject();
 
-        public Cotacao() {
-            GenetareObjJson();
-        }
+        public Cotacao()
+            => GenetareObjJson();
+
 
         private void GenetareObjJson() {
             try {
@@ -24,19 +24,19 @@ namespace Aula48 {
                     jsonValue = reader.ReadToEnd();
                 }
 
-                this.jObject = JObject.Parse(jsonValue);
+                jObject = JObject.Parse(jsonValue);
             }
             catch (JsonException) {
                 Console.Write("Falha ao pegar Json");
             }
         }
 
-        public double GetDolarValueBuy() {
-            return (double)jObject.SelectToken("results.currencies.USD.buy");
-        }
+        static public double GetDolarValueBuy()
+            => (double)jObject.SelectToken("results.currencies.USD.buy");
 
-        public double GetDolarValueSell() {
-            return (double)jObject.SelectToken("results.currencies.USD.sell");
-        }
+
+        static public double GetDolarValueSell() 
+            => (double)jObject.SelectToken("results.currencies.USD.sell");
+
     }
 }

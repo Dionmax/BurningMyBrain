@@ -9,9 +9,11 @@ namespace Aula48 {
         static void Main(string[] args) {
             Cotacao cot = new Cotacao();
 
-            Console.WriteLine(cot.GetDolarValueBuy());
+            Console.WriteLine(Cotacao.GetDolarValueBuy());
 
-            Console.WriteLine(cot.GetDolarValueSell());
+            Console.WriteLine(Cotacao.GetDolarValueSell());
+
+            Console.WriteLine(ConversorMoeda.RealToDolar(200, 6));
 
             Console.ReadKey();
         }
