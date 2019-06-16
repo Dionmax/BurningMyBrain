@@ -9,8 +9,6 @@ class TestParams
             {
                 sum += number[i];
             }
-
-            System.Console.WriteLine(sum);
             return sum;
         }
     }

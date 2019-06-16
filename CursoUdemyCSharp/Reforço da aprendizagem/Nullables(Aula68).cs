@@ -1,9 +1,8 @@
 ﻿using System;
-
-public class Class1 {
-    static void Aula68() {
-
-        //Valores opcional
+public class Program
+{
+    public static void Main()
+    {
         double? x = null;
         double? y = null;
         double a;

@@ -12,9 +12,6 @@ namespace Aula48 {
             Console.WriteLine(ConversorMoeda.RealToDolar(200, 6));
 
             Console.ReadKey();
-
-
-
         }
     }
 }
