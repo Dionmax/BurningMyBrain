@@ -2,8 +2,8 @@
 
 public class PalavraThiss {
 
-    private string _nome;
-    private smalint _idade;
+    private string _nome = "";
+    private smalint _idade = 0;
 
     public PalavraThiss(string nome) {
         _nome = nome;
@@ -12,4 +12,7 @@ public class PalavraThiss {
     public PalavraThiss(string nome, smalint idade) : this() {
         _idade = idade;
     }
+
+    public string getNome() 
+        => _nome;
 }
