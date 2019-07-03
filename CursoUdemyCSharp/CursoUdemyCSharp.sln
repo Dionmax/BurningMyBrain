@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.29001.49
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aula48", "Aula48\Aula48.csproj", "{1CA79B58-73E9-402D-8773-E4DCAE18067B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aula78", "Aula78\Aula78.csproj", "{13A1D02C-4EF8-4B67-B164-B46F70101B02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aula78", "Aula78\Aula78.csproj", "{13A1D02C-4EF8-4B67-B164-B46F70101B02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aula115_Enum", "Aula115_Enum\Aula115_Enum.csproj", "{09510227-ADE6-4D53-83C6-16D91904C2B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{13A1D02C-4EF8-4B67-B164-B46F70101B02}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13A1D02C-4EF8-4B67-B164-B46F70101B02}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13A1D02C-4EF8-4B67-B164-B46F70101B02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09510227-ADE6-4D53-83C6-16D91904C2B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09510227-ADE6-4D53-83C6-16D91904C2B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09510227-ADE6-4D53-83C6-16D91904C2B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09510227-ADE6-4D53-83C6-16D91904C2B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
