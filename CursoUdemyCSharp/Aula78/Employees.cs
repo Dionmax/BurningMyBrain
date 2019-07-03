@@ -2,17 +2,21 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Aula78 {
+namespace Aula78
+{
 
-    class Employees {
+    class Employees
+    {
 
         public int id;
         private string _name;
         public float salario;
-
-        public Employees() { }
-        public Employees(int id, string name) { setName(name); setId(id); }
-        public Employees(int id, string name, float salario) : this() { setSalario(salario); }
+        public Employees(int id, string name, float salario)
+        {
+            setId(id);
+            setName(name);
+            setSalario(salario);
+        }
 
         private void setId(int id)
             => this.id = id;
@@ -26,7 +30,8 @@ namespace Aula78 {
         public void aumentarSalario(float aumento)
             => salario += salario * aumento / 100;
 
-        public override string ToString() {
+        public override string ToString()
+        {
             return "\nId: " + id + "\nNome: " + _name + "\nSalario: " + salario;
         }
     }
