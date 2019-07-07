@@ -7,5 +7,12 @@ namespace Aula118_Composicao1_Exercicios
     class Department
     {
         public string Name { get; set; }
+
+        public Department() { }
+
+        public Department(string name)
+        {
+            Name = name;
+        }
     }
 }

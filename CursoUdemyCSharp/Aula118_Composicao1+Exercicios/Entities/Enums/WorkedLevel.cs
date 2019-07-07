@@ -7,7 +7,7 @@ namespace Aula118_Composicao1_Exercicios
     enum WorkedLevel : int
     {
         JUNIOR,
-        MD_LEVEL,
+        MIDLEVEL,
         SENIOR
     }
 }

@@ -6,21 +6,45 @@ namespace Aula118_Composicao1_Exercicios
 {
     class Worker
     {
-        private List<HourContract> contracts;
+        private List<HourContract> contracts = new List<HourContract>();
 
         public string Name { get; set; }
+
         public double BaseSalary { get; set; }
+
         internal WorkedLevel Level { get; set; }
+
         public Department Department { get; set; }
 
-        public void addContract(HourContract contract)
+
+        public Worker() { }
+
+        public Worker(string name, double baseSalary, WorkedLevel level, Department department)
+        {
+            Name = name;
+            BaseSalary = baseSalary;
+            Level = level;
+            Department = department;
+        }
+
+        public void AddContract(HourContract contract)
         {
             contracts.Add(contract);
         }
-        public void removeContract(HourContract contract)
+
+        public void RemoveContract(HourContract contract)
         {
             contracts.Remove(contract);
         }
-        public double income(int year, int moth) { return 0.0; }
+
+        public double Income(int year, int moth)
+        {
+            double sum = BaseSalary;
+
+            foreach (HourContract contract in contracts)
+                sum += contract.TotalValue();
+
+            return sum;
+        }
     }
 }
