@@ -47,7 +47,6 @@ namespace Aula122_ExercicioFixacao.Entities
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            double sum = 0.0;
 
             sb.AppendLine("Order Summary: ");
             sb.Append("Order Moment: ");
@@ -62,15 +61,10 @@ namespace Aula122_ExercicioFixacao.Entities
 
             foreach (OrderItem item in Items)
             {
-                sb.Append(item.Product.Name + ", ");
-                sb.Append("$" + item.Product.Price + ", ");
-                sb.Append("Quantity: " + item.Quantity + ", ");
-                sb.AppendLine("$" + item.SubTotal().ToString());
-
-                sum += item.SubTotal();
+                sb.AppendLine(item.ToString());
             }
 
-            sb.AppendLine("Total price: $" + sum);
+            sb.AppendLine("Total price: $" + Total());
 
             return sb.ToString();
         }
