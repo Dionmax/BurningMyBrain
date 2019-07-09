@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aula121_Composition2+Exerci
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aula122_ExercicioFixacao", "Aula122_ExercicioFixacao\Aula122_ExercicioFixacao.csproj", "{AE9D6700-7765-48C7-9D67-7D9BD3F2C923}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aula126_Upcasting+Downcasting", "Aula126_Upcasting+Downcasting\Aula126_Upcasting+Downcasting.csproj", "{B37C4860-C2E7-43DA-996A-FC218A5C8857}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{AE9D6700-7765-48C7-9D67-7D9BD3F2C923}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE9D6700-7765-48C7-9D67-7D9BD3F2C923}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE9D6700-7765-48C7-9D67-7D9BD3F2C923}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B37C4860-C2E7-43DA-996A-FC218A5C8857}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B37C4860-C2E7-43DA-996A-FC218A5C8857}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B37C4860-C2E7-43DA-996A-FC218A5C8857}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B37C4860-C2E7-43DA-996A-FC218A5C8857}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
