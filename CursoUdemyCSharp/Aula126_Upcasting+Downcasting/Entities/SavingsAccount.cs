@@ -23,7 +23,8 @@ namespace Aula126_Upcasting_Downcasting.Entities
 
         public override void Withdraw(double amount)
         {
-            Balance -= amount;
+            base.Withdraw(amount);
+            Balance -= 2.0;
         }
     }
 }

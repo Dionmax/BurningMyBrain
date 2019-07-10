@@ -1,6 +1,7 @@
 ﻿using System;
 using Aula115_Enum.Entities;
 using Aula115_Enum.Entities.Enums;
+
 namespace Aula115_Enum
 {
     class Program
