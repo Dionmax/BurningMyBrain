@@ -20,5 +20,10 @@ namespace Aula126_Upcasting_Downcasting.Entities
         {
             Balance += Balance * InterestRate;
         }
+
+        public override void Withdraw(double amount)
+        {
+            Balance -= amount;
+        }
     }
 }

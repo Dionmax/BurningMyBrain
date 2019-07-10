@@ -21,10 +21,10 @@ namespace Aula126_Upcasting_Downcasting.Entities
             Balance = balance;
         }
 
-        public void Withdraw(double amount)
+        public virtual void Withdraw(double amount)
         {
             if (amount > 0 && amount < Balance)
-                Balance -= amount;
+                Balance -= (amount + 5.0);
         }
 
         public void Deposit(double amount)
