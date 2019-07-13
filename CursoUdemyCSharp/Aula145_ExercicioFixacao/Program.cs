@@ -1,6 +1,6 @@
 ﻿using System;
 using Aula145_ExercicioFixacao.Entities;
-using Aula145_ExercicioFixacao.Entities.Exeption;
+using Aula145_ExercicioFixacao.Entities.Exception;
 
 namespace Aula145_ExercicioFixacao
 {
@@ -31,9 +31,9 @@ namespace Aula145_ExercicioFixacao
 
                 account.Withdraw(amount);
             }
-            catch (AccountExeption e)
+            catch (AccountException e)
             {
-                Console.WriteLine("Account exeption: " + e.Message);
+                Console.WriteLine("Account exception: " + e.Message);
             }
             catch (FormatException e)
             {
