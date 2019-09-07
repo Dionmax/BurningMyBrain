@@ -14,5 +14,9 @@ namespace Aula118_Composicao1_Exercicios
         {
             Name = name;
         }
+		
+		public double GerarRenda(){
+			return 100;
+		}
     }
 }
