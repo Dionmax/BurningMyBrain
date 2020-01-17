@@ -5,10 +5,12 @@ $(document).ready(function () {
         var obj = {
             txtNome: $("#txtNome").val(),
             txtEmail: $("#txtEmail").val(),
-            txtTelefone: $("#txtTelefone").val()
+            txtTelefone: $("#txtTelefone").val(),
+            //txtIdade: $('#txtIdade').val()
         };
 
         console.log(obj);
+
         //spResultado
         $.ajax({
             url: "action/UsuarioAction.php?req=1",
@@ -34,7 +36,7 @@ $(document).ready(function () {
                 console.log(error);
             },
             complete: function () {
-
+                // $("#txtNome")[0].reset();
             }
         });
 
