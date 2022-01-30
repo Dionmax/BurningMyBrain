@@ -10,7 +10,7 @@ namespace Aula204_generics_part1
     {
         static void Main(string[] args)
         {
-            PrintServiceProgram printServiceProgram = new PrintServiceProgram();
+            PrintServiceProgram<int> printServiceProgram = new();
 
             Console.Write("How many values?: ");
 
