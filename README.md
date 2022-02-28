@@ -1,2 +1,2 @@
 # BurningMyBrain
-Estudos de Casa :D
+Home studies :D
