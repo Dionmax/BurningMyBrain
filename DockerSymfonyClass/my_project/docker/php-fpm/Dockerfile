@@ -3,7 +3,7 @@ FROM php:7.4-fpm
 RUN apt-get clean
 RUN apt-get update
 
-RUN apt-get install -y zlib1g-dev libpq-dev git libicu-dev libxml2-dev libzip-dev zip \
+RUN apt-get install -y zlib1g-dev libpq-dev git libicu-dev libxml2-dev libzip-dev zip nodejs npm \
     && docker-php-ext-configure intl \
     && docker-php-ext-install intl \
     && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
@@ -20,3 +20,5 @@ RUN ln -s /usr/share/zoneinfo/Brazil/East/America/Sao_Paulo /etc/localtime
 RUN "date"
 
 WORKDIR /var/www/symfony
+
+RUN npm install
