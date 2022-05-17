@@ -1,0 +1,28 @@
+version: '2'
+services:
+    postgres:
+        image: postgres
+        ports:
+            - '5433:5432'
+        environment:
+            - POSTGRES_USER=postgress
+            - POSTGRES_PASSWORD=postgress
+    php:
+        build: php-fpm
+        ports:
+            - '9000:9000'
+        volumes:
+            - ../:/var/www/symfony:cached
+            - ./logs/symfony:/var/www/symfony/var/logs:cached
+        links:
+            - postgres
+    nginx:
+        build: nginx
+        ports:
+            - '80:80'
+        links:
+            - php
+        volumes_from:
+            - php
+        volumes:
+            - ./logs/nginx/:/var/log/nginx:cached
