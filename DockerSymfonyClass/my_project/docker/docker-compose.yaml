@@ -5,8 +5,8 @@ services:
         ports:
             - '5433:5432'
         environment:
-            - POSTGRES_USER=postgress
-            - POSTGRES_PASSWORD=postgress
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=postgres
     php:
         build: php-fpm
         ports:
