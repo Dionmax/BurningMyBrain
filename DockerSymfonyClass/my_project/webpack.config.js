@@ -5,6 +5,8 @@ Encore
     .setPublicPath('/build')
     .addEntry('js/custom', './build/js/custom.js')
     .addStyleEntry('css/custom', ['./build/css/custom.css'])
+    .enableSingleRuntimeChunk()
+    .autoProvidejQuery()
 ;
 
 module.exports = Encore.getWebpackConfig();

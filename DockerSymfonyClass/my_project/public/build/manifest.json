@@ -1,0 +1,5 @@
+{
+  "build/js/custom.js": "/build/js/custom.js",
+  "build/css/custom.css": "/build/css/custom.css",
+  "build/runtime.js": "/build/runtime.js"
+}
