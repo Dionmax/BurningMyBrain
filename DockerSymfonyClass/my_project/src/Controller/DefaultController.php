@@ -50,4 +50,17 @@ class DefaultController extends AbstractController
             'users' => $users,
         ]);
     }
+
+    /**
+     * @Route("/user/{id}", name="app_default")
+     * @param User $user
+     * @return Response
+     */
+    public function getUserAction(User $user): Response
+    {
+        return $this->render('default/show.html.twig', [
+            'controller_name' => 'DefaultController',
+            'user' => $user,
+        ]);
+    }
 }
