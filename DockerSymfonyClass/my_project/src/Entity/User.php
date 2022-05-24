@@ -51,9 +51,14 @@ class User
     private $age;
 
     /**
-     * @ORM\OneToMany(targetEntity=Video::class, mappedBy="owner")
+     * @ORM\OneToMany(targetEntity=Video::class, mappedBy="owner", cascade="remove", orphanRemoval=true)
      */
     private $videos;
+
+    /**
+     * @ORM\OneToOne(targetEntity=Address::class, cascade={"persist", "remove"})
+     */
+    private $address;
 
     public function __construct()
     {
@@ -139,6 +144,18 @@ class User
                 $video->setOwner(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getAddress(): ?Address
+    {
+        return $this->address;
+    }
+
+    public function setAddress(?Address $address): self
+    {
+        $this->address = $address;
 
         return $this;
     }

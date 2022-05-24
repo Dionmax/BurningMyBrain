@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Address;
 use App\Entity\User;
 use App\Entity\Video;
 use Doctrine\Persistence\ManagerRegistry;
@@ -42,6 +43,8 @@ class DefaultController extends AbstractController
 //            $entityManager->persist($user);
 //        }
 
+        // ---- Video
+
 //        $entityManager = $doctrine->getManager();
 //
 //        $user = new User();
@@ -57,6 +60,39 @@ class DefaultController extends AbstractController
 //
 //            $entityManager->persist($video);
 //        }
+//
+//        $entityManager->persist($user);
+//
+//        $entityManager->flush();
+
+        // ---- Address
+
+//        $entityManager = $doctrine->getManager();
+//
+//        $user = new User();
+//
+//        $user->setName("User Adress");
+//
+//
+//        for ($i = 1; $i <= 3; $i++) {
+//            $video = new Video();
+//
+//            $video->setTitle('Video title - ' . $i);
+//
+//            $user->addVideo($video);
+//
+//            $entityManager->persist($video);
+//        }
+//
+//        $address = new Address();
+//
+//        $address->setStreet('Nowhere turning left');
+//
+//        $address->setNumber(1);
+//
+//        $user->setAddress($address);
+//
+//        $entityManager->persist($address);
 //
 //        $entityManager->persist($user);
 //
@@ -81,6 +117,7 @@ class DefaultController extends AbstractController
             'controller_name' => 'DefaultController',
             'user' => $user,
             'videos' => $user->getVideos(),
+            'address' => $user->getAddress(),
         ]);
     }
 }
