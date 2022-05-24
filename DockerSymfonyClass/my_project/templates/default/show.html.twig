@@ -20,4 +20,11 @@
     <div class="example-wrapper">
         <h1>Hello {{ user.name }}! ✅</h1>
     </div>
+
+    <ul>
+        {% for video in videos %}
+            <li>{{ video.id }} - {{ video.title }}</li>
+        {% endfor %}
+    </ul>
+
 {% endblock %}

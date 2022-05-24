@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Entity\Video;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,7 +19,7 @@ class DefaultController extends AbstractController
     public function index(ManagerRegistry $doctrine): Response
     {
 
-        //Create names in database example
+//        //Create names in database example
 //        $names = [
 //            'Keanu Correa DF',
 //            'Unique Stull DF', 'Chase Millan DF',
@@ -40,6 +41,24 @@ class DefaultController extends AbstractController
 //
 //            $entityManager->persist($user);
 //        }
+
+//        $entityManager = $doctrine->getManager();
+//
+//        $user = new User();
+//
+//        $user->setName("User Video");
+//
+//        for ($i = 1; $i <= 3; $i++) {
+//            $video = new Video();
+//
+//            $video->setTitle('Video title - ' . $i);
+//
+//            $user->addVideo($video);
+//
+//            $entityManager->persist($video);
+//        }
+//
+//        $entityManager->persist($user);
 //
 //        $entityManager->flush();
 
@@ -61,6 +80,7 @@ class DefaultController extends AbstractController
         return $this->render('default/show.html.twig', [
             'controller_name' => 'DefaultController',
             'user' => $user,
+            'videos' => $user->getVideos(),
         ]);
     }
 }
