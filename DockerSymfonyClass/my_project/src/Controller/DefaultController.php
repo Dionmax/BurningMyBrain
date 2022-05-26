@@ -43,6 +43,8 @@ class DefaultController extends AbstractController
 //            $entityManager->persist($user);
 //        }
 
+//        $entityManager->flush();
+
         // ---- Video
 
 //        $entityManager = $doctrine->getManager();
@@ -97,6 +99,31 @@ class DefaultController extends AbstractController
 //        $entityManager->persist($user);
 //
 //        $entityManager->flush();
+
+        //---- Followed
+
+//        $entityManager = $doctrine->getManager()->getRepository(User::class);
+//
+//        /**
+//         * @var $user11 User
+//         */
+//        $user11 = $entityManager->find(11);
+//        $user12 = $entityManager->find(12);
+//        $user13 = $entityManager->find(13);
+//        $user14 = $entityManager->find(14);
+//        $user15 = $entityManager->find(15);
+//
+//        $user11->addFollowed($user12);
+//        $user11->addFollowed($user13);
+//        $user11->addFollowed($user14);
+//        $user11->addFollowed($user15);
+//
+//        $entityManager2 = $doctrine->getManager();
+//
+//        $entityManager2->flush();
+//
+//        dump($user11->getFollowed()->count());
+//        dump($user11->getFollowing()->count());
 
         $users = $doctrine->getRepository(User::class)->findAll();
 

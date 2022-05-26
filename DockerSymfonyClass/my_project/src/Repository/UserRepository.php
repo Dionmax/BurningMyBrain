@@ -39,6 +39,18 @@ class UserRepository extends ServiceEntityRepository
         }
     }
 
+    public function findWithVideos($id): User
+    {
+        return $this
+            ->createQueryBuilder('user')
+            ->innerJoin('user.videos', 'videos')
+            ->andWhere('user.id = :id')
+            ->setParameter('id', $id)
+            ->getQuery()
+            ->getOneOrNullResult();
+
+    }
+
 //    /**
 //     * @return User[] Returns an array of User objects
 //     */
