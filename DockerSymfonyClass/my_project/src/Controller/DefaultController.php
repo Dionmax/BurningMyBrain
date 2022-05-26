@@ -6,6 +6,7 @@ use App\Entity\Address;
 use App\Entity\Author;
 use App\Entity\User;
 use App\Entity\Video;
+use App\Services\MyService;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,7 +19,7 @@ class DefaultController extends AbstractController
      * @param ManagerRegistry $doctrine
      * @return Response
      */
-    public function index(ManagerRegistry $doctrine): Response
+    public function index(ManagerRegistry $doctrine, MyService $service): Response
     {
 
 //        //Create names in database example
@@ -126,9 +127,9 @@ class DefaultController extends AbstractController
 //        dump($user11->getFollowed()->count());
 //        dump($user11->getFollowing()->count());
 
-        $author = $doctrine->getRepository(Author::class)->findByWithPdf(1);
-
-        dump($author);
+        //------ Morphic Query
+//        $author = $doctrine->getRepository(Author::class)->findByWithPdf(1);
+//        dump($author);
 
         $users = $doctrine->getRepository(User::class)->findAll();
 
