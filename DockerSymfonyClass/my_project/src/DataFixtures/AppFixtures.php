@@ -14,15 +14,15 @@ class AppFixtures extends Fixture
         // $manager->persist($product);
 
         $names = [
-            'Keanu Correa DF',
-            'Unique Stull DF', 'Chase Millan DF',
-            'Kaylea Parnell DF',
-            'Keshawn Hester DF',
-            'Myah Jarrett DF',
-            'Naomi Fanning DF',
-            'Corrine Witt DF',
-            'Bridger Marcum DF',
-            'Briana Mortensen DF'
+            'Keanu Correa',
+            'Unique Stull', 'Chase Millan',
+            'Kaylea Parnell',
+            'Keshawn Hester',
+            'Myah Jarrett',
+            'Naomi Fanning',
+            'Corrine Witt',
+            'Bridger Marcum',
+            'Briana Mortensen'
         ];
 
         foreach ($names as $name) {

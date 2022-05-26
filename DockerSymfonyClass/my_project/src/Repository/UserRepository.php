@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -39,6 +40,11 @@ class UserRepository extends ServiceEntityRepository
         }
     }
 
+    /**
+     * @param $id
+     * @return User
+     * @throws NonUniqueResultException
+     */
     public function findWithVideos($id): User
     {
         return $this

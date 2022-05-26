@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Address;
+use App\Entity\Author;
 use App\Entity\User;
 use App\Entity\Video;
 use Doctrine\Persistence\ManagerRegistry;
@@ -124,6 +125,10 @@ class DefaultController extends AbstractController
 //
 //        dump($user11->getFollowed()->count());
 //        dump($user11->getFollowing()->count());
+
+        $author = $doctrine->getRepository(Author::class)->findByWithPdf(1);
+
+        dump($author);
 
         $users = $doctrine->getRepository(User::class)->findAll();
 
