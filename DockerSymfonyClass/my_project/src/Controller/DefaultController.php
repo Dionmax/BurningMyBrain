@@ -9,6 +9,8 @@ use App\Entity\Video;
 use App\Services\MyService;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Cache\Adapter\FilesystemAdapter;
+use Symfony\Component\Cache\Adapter\TagAwareAdapter;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -19,7 +21,7 @@ class DefaultController extends AbstractController
      * @param ManagerRegistry $doctrine
      * @return Response
      */
-    public function index(ManagerRegistry $doctrine, MyService $service): Response
+    public function index(ManagerRegistry $doctrine): Response
     {
 
 //        //Create names in database example
@@ -130,6 +132,39 @@ class DefaultController extends AbstractController
         //------ Morphic Query
 //        $author = $doctrine->getRepository(Author::class)->findByWithPdf(1);
 //        dump($author);
+
+        //------ Cache FilesystemAdapter
+//        $cache = new FilesystemAdapter();
+//
+//        $posts = $cache->getItem('database.get_posts');
+//
+//        if (!$posts->isHit()) {
+//            $posts->set(serialize((['post 1', 'post 2', 'post 3'])));
+//            $posts->expiresAfter(5);
+//            $cache->save($posts);
+//        }
+//
+//        var_dump(unserialize($posts->get()));
+//
+//        $cache->deleteItem('database.get_posts');
+//        $cache->clear();
+
+        //------ Cache TagAwareAdapter
+//        $cache = new TagAwareAdapter(
+//            new FilesystemAdapter()
+//        );
+//
+//        $posts = $cache->getItem('computer');
+//
+//        if (!$posts->isHit()) {
+//            $posts->set(serialize((['post 1', 'post 2', 'post 3'])));
+//            $posts->tag(['posts', 'test']);
+//            $cache->save($posts);
+//        }
+//
+//        var_dump(unserialize($posts->get()));
+//
+//        $cache->invalidateTags(['test']); // Delete by Tags
 
         $users = $doctrine->getRepository(User::class)->findAll();
 
