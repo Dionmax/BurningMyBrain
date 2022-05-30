@@ -6,11 +6,14 @@ use App\Entity\Address;
 use App\Entity\Author;
 use App\Entity\User;
 use App\Entity\Video;
+use App\Form\VideoFormType;
 use App\Services\MyService;
 use Doctrine\Persistence\ManagerRegistry;
+use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 use Symfony\Component\Cache\Adapter\TagAwareAdapter;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -186,6 +189,46 @@ class DefaultController extends AbstractController
             'user' => $user,
             'videos' => $user->getVideos(),
             'address' => $user->getAddress(),
+        ]);
+    }
+
+    /**
+     * @Route("/form/video", name="app_default")
+     * @param Request $request
+     * @return Response
+     * @throws Exception
+     */
+    public function getFormAction(ManagerRegistry $doctrine ,Request $request): Response
+    {
+        $manager = $doctrine->getManager();
+
+        $author = new Author();
+        $author->setName('Test man');
+        $manager->persist($author);
+
+        $videos = $doctrine->getRepository(Video::class)->findAll();
+        dump($videos);
+
+        $video = new Video();
+
+        $video->setDuration(1);
+        $video->setAuthor($author);
+        $video->setFormat('mp4');
+        $video->setDescription('test');
+        $video->setFilename('Test Video');
+        $video->setSize(1);
+
+        $form = $this->createForm(VideoFormType::class, $video);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $manager->persist($video);
+            $manager->flush();
+        }
+
+        return $this->render('default/show_form.html.twig', [
+            'form' => $form->createView(),
         ]);
     }
 }

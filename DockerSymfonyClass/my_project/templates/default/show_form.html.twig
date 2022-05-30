@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DefaultController!{% endblock %}
+
+{% block body %}
+    <style>
+        .example-wrapper {
+            margin: 1em auto;
+            max-width: 800px;
+            width: 95%;
+            font: 18px/1.5 sans-serif;
+        }
+    </style>
+
+    <div class="example-wrapper">
+
+        {% form_theme form 'form_table_layout.html.twig' %}
+
+        {{ form_start(form) }}
+
+        {{ form_label(form.title) }}
+        {{ form_widget(form.title) }}
+
+        {% if form.createdAt is defined %}
+            {{ form_label(form.createdAt) }}
+            {{ form_widget(form.createdAt) }}
+        {% endif %}
+
+        {{ form_label(form.save) }}
+        {{ form_widget(form.save) }}
+
+        {{ form_end(form) }}
+    </div>
+
+{% endblock %}
