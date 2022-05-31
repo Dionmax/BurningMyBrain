@@ -194,9 +194,9 @@ class DefaultController extends AbstractController
 
     /**
      * @Route("/form/video", name="app_default")
+     * @param ManagerRegistry $doctrine
      * @param Request $request
      * @return Response
-     * @throws Exception
      */
     public function getFormAction(ManagerRegistry $doctrine ,Request $request): Response
     {
@@ -206,8 +206,8 @@ class DefaultController extends AbstractController
         $author->setName('Test man');
         $manager->persist($author);
 
-        $videos = $doctrine->getRepository(Video::class)->findAll();
-        dump($videos);
+//        $videos = $doctrine->getRepository(Video::class)->findAll();
+//        dump($videos);
 
         $video = new Video();
 
@@ -223,9 +223,21 @@ class DefaultController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $file = $form->get('file')->getData();
+            $fileName = sha1(random_bytes(14)).'.'.$file->guessExtension();
+
+            $file->move(
+                $this->getParameter('videos_directory'),
+                $fileName
+            );
+
+            $video->setFile($fileName);
             $manager->persist($video);
             $manager->flush();
         }
+
+        dump($video);
 
         return $this->render('default/show_form.html.twig', [
             'form' => $form->createView(),

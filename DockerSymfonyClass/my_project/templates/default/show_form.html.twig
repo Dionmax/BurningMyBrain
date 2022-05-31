@@ -14,7 +14,7 @@
 
     <div class="example-wrapper">
 
-        {% form_theme form 'form_table_layout.html.twig' %}
+        {% form_theme form 'bootstrap_5_layout.html.twig' %}
 
         {{ form_start(form) }}
 
@@ -25,6 +25,12 @@
             {{ form_label(form.createdAt) }}
             {{ form_widget(form.createdAt) }}
         {% endif %}
+
+        {{ form_label(form.file) }}
+        {{ form_widget(form.file) }}
+
+        {{ form_label(form.agreeTerms) }}
+        {{ form_widget(form.agreeTerms) }}
 
         {{ form_label(form.save) }}
         {{ form_widget(form.save) }}
