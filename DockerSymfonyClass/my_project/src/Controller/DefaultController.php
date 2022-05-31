@@ -10,6 +10,7 @@ use App\Form\VideoFormType;
 use App\Services\MyService;
 use Doctrine\Persistence\ManagerRegistry;
 use Exception;
+use Swift_Mailer;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 use Symfony\Component\Cache\Adapter\TagAwareAdapter;
@@ -169,6 +170,10 @@ class DefaultController extends AbstractController
 //
 //        $cache->invalidateTags(['test']); // Delete by Tags
 
+
+        // ---------------------- Emails --------------------------
+
+
         $users = $doctrine->getRepository(User::class)->findAll();
 
         return $this->render('default/index.html.twig', [
@@ -197,8 +202,9 @@ class DefaultController extends AbstractController
      * @param ManagerRegistry $doctrine
      * @param Request $request
      * @return Response
+     * @throws Exception
      */
-    public function getFormAction(ManagerRegistry $doctrine ,Request $request): Response
+    public function getFormAction(ManagerRegistry $doctrine, Request $request): Response
     {
         $manager = $doctrine->getManager();
 
@@ -225,7 +231,7 @@ class DefaultController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
 
             $file = $form->get('file')->getData();
-            $fileName = sha1(random_bytes(14)).'.'.$file->guessExtension();
+            $fileName = sha1(random_bytes(14)) . '.' . $file->guessExtension();
 
             $file->move(
                 $this->getParameter('videos_directory'),
@@ -243,4 +249,30 @@ class DefaultController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+
+    /**
+     * @Route("/email", name="app_default")
+     * @param Swift_Mailer $mailer
+     * @return Response
+     */
+    public function sendEmailAction(Swift_Mailer $mailer): Response
+    {
+        $message = (new \Swift_Message('Hello Email'))
+            ->setFrom('send@example.com')
+            ->setTo('recipient@example.com')
+            ->setBody(
+                $this->renderView(
+                    'default/email.html.twig',
+                    array('name' => 'Robert')
+                ),
+                'text/html'
+            );
+
+        $mailer->send($message);
+
+        return $this->render('default/email.html.twig', [
+            'controller_name' => 'DefaultController',
+        ]);
+    }
+
 }
