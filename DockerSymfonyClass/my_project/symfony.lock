@@ -249,6 +249,9 @@
     "symfony/options-resolver": {
         "version": "v5.4.3"
     },
+    "symfony/password-hasher": {
+        "version": "v5.4.8"
+    },
     "symfony/phpunit-bridge": {
         "version": "6.1",
         "recipe": {
@@ -312,6 +315,30 @@
     },
     "symfony/runtime": {
         "version": "v5.4.8"
+    },
+    "symfony/security-bundle": {
+        "version": "5.4",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "5.3",
+            "ref": "98f1f2b0d635908c2b40f3675da2d23b1a069d30"
+        },
+        "files": [
+            "config/packages/security.yaml"
+        ]
+    },
+    "symfony/security-core": {
+        "version": "v5.4.8"
+    },
+    "symfony/security-csrf": {
+        "version": "v5.4.9"
+    },
+    "symfony/security-guard": {
+        "version": "v5.4.9"
+    },
+    "symfony/security-http": {
+        "version": "v5.4.9"
     },
     "symfony/service-contracts": {
         "version": "v2.5.1"
