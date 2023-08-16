@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CamelCase4", "CamelCase4\Ca
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "findMedian", "findMedian\findMedian.csproj", "{A55985E2-3ABE-4A8B-92A1-BD8EDA7E0189}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lonelyinteger", "lonelyinteger\lonelyinteger.csproj", "{D65B80F3-548C-407D-868D-25578020E2C9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{A55985E2-3ABE-4A8B-92A1-BD8EDA7E0189}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A55985E2-3ABE-4A8B-92A1-BD8EDA7E0189}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A55985E2-3ABE-4A8B-92A1-BD8EDA7E0189}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D65B80F3-548C-407D-868D-25578020E2C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D65B80F3-548C-407D-868D-25578020E2C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D65B80F3-548C-407D-868D-25578020E2C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D65B80F3-548C-407D-868D-25578020E2C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
