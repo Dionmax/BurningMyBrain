@@ -4,23 +4,35 @@ services:
   node:
     build: ./docker/node
     entrypoint:
-    - sleep
-    - infinity
+      - sleep
+      - infinity
     init: true
     volumes:
-    - type: bind
-      source: /var/run/docker.sock
-      target: /var/run/docker.sock
+      - type: bind
+        source: /var/run/docker.sock
+        target: /var/run/docker.sock
     working_dir: /app
 
   anaconda:
     build: ./docker/anaconda
     entrypoint:
-    - sleep
-    - infinity
+      - sleep
+      - infinity
     init: true
     volumes:
-    - type: bind
-      source: /var/run/docker.sock
-      target: /var/run/docker.sock
+      - type: bind
+        source: /var/run/docker.sock
+        target: /var/run/docker.sock
+    working_dir: /app
+
+  r:
+    build: ./docker/r
+    entrypoint:
+      - sleep
+      - infinity
+    init: true
+    volumes:
+      - type: bind
+        source: /var/run/docker.sock
+        target: /var/run/docker.sock
     working_dir: /app

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <script src="interview.js"></script>
+  <head>
+    <title>My HTML File</title>
+  </head>
+  <body>
+    <div>
+      <ul>
+        <script>
+          let list = main();
+          for (let i = 0; i < list.length; i++) {
+            document.write("<li>" + list[i] + "</li>");
+          }
+        </script>
+      </ul>
+    </div>
+    <br />
+    <div>
+      <ul>
+        <script>
+          let text = letters();
+
+          for (const [key, value] of Object.entries(text)) {
+            document.write("<li>" + key + ": " + value + "</li>");
+          }
+        </script>
+      </ul>
+    </div>
+  </body>
+</html>
