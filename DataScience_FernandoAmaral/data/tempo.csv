@@ -1,4 +1,4 @@
-Aparencia;Temperatura;Umidade;Vento;Jogar
+﻿Aparencia;Temperatura;Umidade;Vento;Jogar
 sol;85;85;FALSO;nao
 sol;80;90;VERDADEIRO;nao
 nublado;83;86;FALSO;sim
