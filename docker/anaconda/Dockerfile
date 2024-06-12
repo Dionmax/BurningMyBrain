@@ -12,3 +12,9 @@ COPY . /app
 
 # Set the default command to run when the container starts
 CMD ["python", "app.py"]
+
+# Update conda
+RUN conda update -n base conda
+
+# Update all packages
+RUN conda update --all

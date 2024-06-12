@@ -13,5 +13,6 @@ RUN Rscript -e 'install.packages("IRkernel", repos="http://cran.us.r-project.org
 RUN Rscript -e 'IRkernel::installspec()'
 
 USER root
+
 # Install Git
 RUN apt-get update && apt-get install -y git
