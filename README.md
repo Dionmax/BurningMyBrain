@@ -1,2 +1,2 @@
 # BurningMyBrain
-Home studies :D
+Homework :D
