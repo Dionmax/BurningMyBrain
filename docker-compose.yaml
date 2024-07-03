@@ -11,7 +11,13 @@ services:
       - type: bind
         source: /var/run/docker.sock
         target: /var/run/docker.sock
-    working_dir: /app
+    working_dir: /CursoWebJavascriptCompleto
+    # environment:
+    #   - WDS_SOCKET_HOST=127.0.0.1 
+    #   - CHOKIDAR_USEPOLLING=true
+    #   - WATCHPACK_POLLING=true 
+    # ports:
+    #   - "3000:3000"
 
   anaconda:
     build: ./docker/anaconda
@@ -23,7 +29,7 @@ services:
       - type: bind
         source: /var/run/docker.sock
         target: /var/run/docker.sock
-    working_dir: /app
+    working_dir: /DataScience_FernandoAmaral/Python
 
   r:
     build: ./docker/r
@@ -35,4 +41,4 @@ services:
       - type: bind
         source: /var/run/docker.sock
         target: /var/run/docker.sock
-    working_dir: /app
+    working_dir: /DataScience_FernandoAmaral/R
