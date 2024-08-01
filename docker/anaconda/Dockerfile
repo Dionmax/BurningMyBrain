@@ -16,7 +16,9 @@ RUN conda update -n base conda
 # Update all packages
 RUN conda update --all
 
-# Install tensorflow
+# Install tensorflow GPU
+RUN python3 -m pip install tensorflow[and-cuda]
+
 RUN python3 -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
 
 # Install keras
